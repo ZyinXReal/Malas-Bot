@@ -1,5 +1,12 @@
 def menu_bot():
     return '''
+          Selanat Datang Di Bot
+             [ @HostURL_Bot ]
+                [ URLBot ]
+        Developer : @ZyinX
+        Partnsr : Wannazid
+        Nama Bot : URLBot
+        
        🗒️ 𝗙𝗶𝘁𝘂𝗿 𝗕𝗼𝘁 𝗗𝗮𝗻 𝗖𝗼𝗺𝗺𝗮𝗻𝗱 𝗕𝗼𝘁 :
     		
     	𝗜𝗺𝗮𝗴𝗲 🖼️
