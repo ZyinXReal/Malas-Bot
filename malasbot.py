@@ -48,13 +48,13 @@ disp = Dispatcher(bot=bot)
 #Join And Leave Grup
 @disp.message_handler(content_types=['new_chat_members'])
 async def user_joined_grup(pesan: types.Message):
-    await pesan.answer(f'Selamat Datang Di Grup, Semoga Betah Ya :)')
+    await pesan.answer(f'[ LOGS ]: Someone join the telegram groups!')
 
 @disp.message_handler(content_types=['left_chat_member'])
 async def user_leave_grup(pesan: types.Message):
 	first_name = pesan.from_user.first_name
 	last_name = pesan.from_user.last_name
-	await pesan.answer('Sempai Jumpa Bro, Semoga Bertemu Kembali:)')
+	await pesan.answer(f'[ LOGS ]: Someone has left the telegram groups!')
 
 #Menu Tools
 @disp.message_handler(commands=['ttaudio'])
@@ -64,7 +64,7 @@ async def tt_download_musik(pesan: types.Message):
 	try:
 		ps = req.json()['respon']
 		video = ps['audio']
-		await pesan.answer('Tunggu Sebentar!')
+		await pesan.answer('Proses sedang dibaca!')
 		await pesan.answer(f'''
 		Klik Link Now
 		
@@ -81,7 +81,7 @@ async def tt_download_versi2(pesan: types.Message):
 	try:
 		ps = req.json()['respon']
 		video = ps['video']
-		await pesan.answer('Tunggu Sebentar!')
+		await pesan.answer('Utiwi')
 		await pesan.answer(f'''
 		Klik Link Now
 		
@@ -105,7 +105,7 @@ async def neko_random(pesan: types.Message):
     config = config_malasbot()
     reqs = requests.get(f'https://raku-web.herokuapp.com/api/nsfw/nsfwNeko?apikey={config}')
     ps = reqs.json()
-    await pesan.answer('Tunggu Sebentar!')
+    await pesan.answer('Shang-e ya? Proses nih!')
     await pesan.answer(ps['result'])
     
 @disp.message_handler(commands=['blowjob'])
@@ -510,7 +510,7 @@ async def make_qrcode(pesan: types.Message):
 	qr.add_data(link)
 	qr.make(fit=True)
 	img = qr.make_image(fill='black',back_color='white')
-	await pesan.answer('Tunggu Sebentar!')
+	await pesan.answer('Sedang membuat barcode!')
 	await pesan.answer_photo(types.InputFile.file(img))
 	
 @disp.message_handler(commands=['b64decode'])
@@ -532,7 +532,7 @@ async def short_url(pesan: types.Message):
 	link = pesan.text.replace('/short','')
 	req = requests.get(f'https://rasenmedia.my.id/api/slink?apikey=baka&url={link}')
 	parse = req.json()['result']
-	await pesan.answer('Tunggu Sebentar!')
+	await pesan.answer('Tunggu Sebentar, sedang membuat short link!')
 	await pesan.answer(parse)
 
 @disp.message_handler(commands=['lirik'])
@@ -577,19 +577,20 @@ async def nuliskanan(pesan : types.Message):
     await pesan.answer(menu_bot())
     
 button1 = KeyboardButton('𝗛𝗲𝗹𝗽 𝗕𝗼𝘁 🤖')
-button2 = KeyboardButton('𝗠𝗲𝗻𝘂 𝗕𝗼𝘁🤖')
-keyboard1 = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add(button1).add(button2)
+button2 = KeyboardButton('𝗠𝗲𝗻𝘂 𝗕𝗼𝘁 🤖')
+button3 = KeyboardButton('Report Bug‼️')
+keyboard1 = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add(button1).add(button2).add(button3)
 
 @disp.message_handler(commands=['start', 'help'])
 async def start_bot(pesan: types.Message):
-	await pesan.reply('𝗪𝗲𝗹𝗰𝗼𝗺𝗲 𝘁𝗼 𝗠𝗮𝗹𝗮𝘀𝗕𝗼𝘁, 𝗦𝗲𝗹𝗲𝗰𝘁 𝗠𝗲𝗻𝘂 ❗',reply_markup=keyboard1)
+	await pesan.reply('Selamat Datang! Pilih menu dibawah ini!',reply_markup=keyboard1)
 
 @disp.message_handler()
 async def keyboard_answer(pesan: types.Message):
-    if pesan.text == '𝗛𝗲𝗹𝗽 𝗕𝗼𝘁 🤖':
+    if pesan.text == '𝗛𝗲𝗹𝗽':
     	await pesan.answer(about_bot())
-    elif pesan.text == '𝗠𝗲𝗻𝘂 𝗕𝗼𝘁🤖':
+    elif pesan.text == '𝗠𝗲𝗻𝘂';
     	await pesan.answer(menu_bot())
-    	
+		
 if __name__ == '__main__':
 	executor.start_polling(disp,skip_updates=True)
