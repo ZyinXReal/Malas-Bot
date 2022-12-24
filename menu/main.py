@@ -4,7 +4,7 @@ def menu_bot():
              [ @HostURL_Bot ]
                 [ URLBot ]
         Developer : @ZyinX
-        Partnsr : Wannazid
+        Partner : Wannazid
         Nama Bot : URLBot
         
        🗒️ 𝗙𝗶𝘁𝘂𝗿 𝗕𝗼𝘁 𝗗𝗮𝗻 𝗖𝗼𝗺𝗺𝗮𝗻𝗱 𝗕𝗼𝘁 :
@@ -101,6 +101,6 @@ def menu_bot():
     	• Base64 Encode : /b64encode (string)
     	• Base64 Decode : /b64decode (b64)
     	
-    	©2022 MalasBot - Telegram Bot.
+    	©2022 URLBot - Telegram Bot.
     	
     	'''
