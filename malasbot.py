@@ -589,7 +589,7 @@ async def start_bot(pesan: types.Message):
 async def keyboard_answer(pesan: types.Message):
     if pesan.text == '𝗛𝗲𝗹𝗽':
     	await pesan.answer(about_bot())
-    elif pesan.text == '𝗠𝗲𝗻𝘂';
+    elif pesan.text == '𝗠𝗲𝗻𝘂':
     	await pesan.answer(menu_bot())
 		
 if __name__ == '__main__':
