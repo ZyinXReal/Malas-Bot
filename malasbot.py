@@ -28,11 +28,11 @@ def banner():
    | |  | | (_| | | (_| \__ \_____| |_) | (_) | |_ 
    |_|  |_|\__,_|_|\__,_|___/     |____/ \___/ \__|
             
-               MalasBot - Bot Telegram
+               URLBot - Bot Telegram
                
-                   Version : 0.2
+                   Version : 0.3
                      
-         Get MalasBot : github.com/wannazid                                                                                                                        
+         Get MalasBot : https://github.com/ZyinXReal/Malas-Bot                                                                                                                        
      ''')
 banner()
 
@@ -578,8 +578,7 @@ async def nuliskanan(pesan : types.Message):
     
 button1 = KeyboardButton('𝗛𝗲𝗹𝗽 𝗕𝗼𝘁 🤖')
 button2 = KeyboardButton('𝗠𝗲𝗻𝘂 𝗕𝗼𝘁 🤖')
-button3 = KeyboardButton('Report Bug‼️')
-keyboard1 = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add(button1).add(button2).add(button3)
+keyboard1 = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add(button1).add(button2)
 
 @disp.message_handler(commands=['start', 'help'])
 async def start_bot(pesan: types.Message):
