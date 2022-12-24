@@ -582,7 +582,7 @@ keyboard1 = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).ad
 
 @disp.message_handler(commands=['start', 'help'])
 async def start_bot(pesan: types.Message):
-	await pesan.reply('Selamat Datang! Pilih menu dibawah ini!',reply_markup=keyboard1)
+	await pesan.reply('Selamat Datang! Dikarenakan Button dibawah eror, silahkan ketik /menu',reply_markup=keyboard1)
 
 @disp.message_handler()
 async def keyboard_answer(pesan: types.Message):
